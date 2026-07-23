@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SILIGURI OTN</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="left">
+
+<h1>SILIGURI OTN</h1>
+
+<p>I-WB-SLGR-AG2-0001</p>
+
+</div>
+
+<div class="right">
+
+<div id="deviceStatus">🟢 ONLINE</div>
+
+<div id="clock">--:--:--</div>
+
+<div id="lastUpdate">Last Update : --</div>
+
+</div>
+
+</header>
+
+<!-- ================= EQUIPMENT ================= -->
+
+<section class="equipment">
+
+<div class="card">
+<h2>PAC-1</h2>
+<div id="pac1" class="status off">OFF</div>
+</div>
+
+<div class="card">
+<h2>PAC-2</h2>
+<div id="pac2" class="status off">OFF</div>
+</div>
+
+<div class="card">
+<h2>PAC-3</h2>
+<div id="pac3" class="status off">OFF</div>
+</div>
+
+<div class="card">
+<h2>PAC-4</h2>
+<div id="pac4" class="status off">OFF</div>
+</div>
+
+<div class="card">
+<h2>PAC-5</h2>
+<div id="pac5" class="status off">OFF</div>
+</div>
+
+<div class="card dg">
+<h2>DG-1</h2>
+<div id="dg1" class="status off">STOP</div>
+</div>
+
+<div class="card dg">
+<h2>DG-2</h2>
+<div id="dg2" class="status off">STOP</div>
+</div>
+
+<div class="card eb">
+<h2>EB</h2>
+<div id="eb" class="status on">ON</div>
+</div>
+
+</section>
+
+<!-- ================= GRAPH ================= -->
+
+<section class="graph">
+
+<h2>Equipment Status History</h2>
+
+<canvas id="equipmentChart"></canvas>
+
+</section>
+
+<!-- ================= SUMMARY ================= -->
+
+<section class="summary">
+
+<div class="summaryCard">
+
+<h3>PAC Running</h3>
+
+<h1 id="pacRunning">0 / 5</h1>
+
+</div>
+
+<div class="summaryCard">
+
+<h3>DG Running</h3>
+
+<h1 id="dgRunning">0 / 2</h1>
+
+</div>
+
+<div class="summaryCard">
+
+<h3>EB Status</h3>
+
+<h1 id="ebSummary">--</h1>
+
+</div>
+
+</section>
+
+<!-- ================= SYSTEM ================= -->
+
+<section class="system">
+
+<div class="sysBox">
+
+<h3>ThingSpeak</h3>
+
+<p id="cloudStatus">Connected</p>
+
+</div>
+
+<div class="sysBox">
+
+<h3>ESP32</h3>
+
+<p id="espStatus">Online</p>
+
+</div>
+
+<div class="sysBox">
+
+<h3>Refresh</h3>
+
+<p>15 Seconds</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<b>SILIGURI OTN</b><br>
+
+Industrial Monitoring Dashboard<br>
+
+I-WB-SLGR-AG2-0001 © 2026
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
