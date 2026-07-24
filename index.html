@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SILIGURI OTN</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!--==========================
+HEADER
+===========================-->
+
+<header class="header">
+
+<div class="header-left">
+
+<img src="jio.png" class="jio-logo">
+
+<div class="station-code">
+
+I-WB-SLGR-AG2-0001
+
+</div>
+
+</div>
+
+
+<div class="header-center">
+
+<h1>SILIGURI OTN</h1>
+
+</div>
+
+
+<div class="header-right">
+
+<div id="liveDate">
+
+24-Jul-2026
+
+</div>
+
+<div id="liveTime">
+
+10:45:30 AM
+
+</div>
+
+<div id="status">
+
+🟢 ONLINE
+
+</div>
+
+</div>
+
+</header>
+
+<hr class="top-line">
+
+<!--==========================
+SLD START
+===========================-->
+
+<section class="mimic-panel">
+    <!-- ==========================
+     SLD MIMIC PANEL (SVG)
+=========================== -->
+
+<svg id="mimicSVG" width="100%" height="420" viewBox="0 0 1200 420">
+
+    <!-- EB -->
+    <text x="600" y="40" text-anchor="middle" class="eqText">EB</text>
+    <circle id="ledEB" cx="600" cy="60" r="10" class="ledOff"/>
+    <text x="620" y="66" class="statusText" id="ebStatus">OFF</text>
+
+    <!-- DG1 -->
+    <text x="300" y="120" text-anchor="middle" class="eqText">DG1</text>
+    <circle id="ledDG1" cx="300" cy="140" r="10" class="ledOff"/>
+    <text x="320" y="146" class="statusText" id="dg1Status">OFF</text>
+
+    <!-- DG2 -->
+    <text x="900" y="120" text-anchor="middle" class="eqText">DG2</text>
+    <circle id="ledDG2" cx="900" cy="140" r="10" class="ledOff"/>
+    <text x="920" y="146" class="statusText" id="dg2Status">OFF</text>
+
+    <!-- Main Busbar -->
+    <line x1="180" y1="220" x2="1020" y2="220" class="busbar"/>
+    <text x="600" y="205" text-anchor="middle" class="busText">
+        MAIN BUSBAR
+    </text>
+
+    <!-- Vertical Lines -->
+    <line id="lineEB" x1="600" y1="70" x2="600" y2="220" class="powerLine"/>
+
+    <line id="lineDG1" x1="300" y1="150" x2="300" y2="220" class="powerLine"/>
+
+    <line id="lineDG2" x1="900" y1="150" x2="900" y2="220" class="powerLine"/>
+
+    <!-- PAC 1 -->
+    <line id="linePAC1" x1="250" y1="220" x2="250" y2="300" class="powerLine"/>
+    <circle id="ledPAC1" cx="250" cy="315" r="10" class="ledOff"/>
+    <text x="250" y="345" text-anchor="middle" class="eqText">PAC1</text>
+    <text x="250" y="365" text-anchor="middle" class="statusText" id="pac1Status">OFF</text>
+
+    <!-- PAC 2 -->
+    <line id="linePAC2" x1="425" y1="220" x2="425" y2="300" class="powerLine"/>
+    <circle id="ledPAC2" cx="425" cy="315" r="10" class="ledOff"/>
+    <text x="425" y="345" text-anchor="middle" class="eqText">PAC2</text>
+    <text x="425" y="365" text-anchor="middle" class="statusText" id="pac2Status">OFF</text>
+
+    <!-- PAC 3 -->
+    <line id="linePAC3" x1="600" y1="220" x2="600" y2="300" class="powerLine"/>
+    <circle id="ledPAC3" cx="600" cy="315" r="10" class="ledOff"/>
+    <text x="600" y="345" text-anchor="middle" class="eqText">PAC3</text>
+    <text x="600" y="365" text-anchor="middle" class="statusText" id="pac3Status">OFF</text>
+
+    <!-- PAC 4 -->
+    <line id="linePAC4" x1="775" y1="220" x2="775" y2="300" class="powerLine"/>
+    <circle id="ledPAC4" cx="775" cy="315" r="10" class="ledOff"/>
+    <text x="775" y="345" text-anchor="middle" class="eqText">PAC4</text>
+    <text x="775" y="365" text-anchor="middle" class="statusText" id="pac4Status">OFF</text>
+
+    <!-- PAC 5 -->
+    <line id="linePAC5" x1="950" y1="220" x2="950" y2="300" class="powerLine"/>
+    <circle id="ledPAC5" cx="950" cy="315" r="10" class="ledOff"/>
+    <text x="950" y="345" text-anchor="middle" class="eqText">PAC5</text>
+    <text x="950" y="365" text-anchor="middle" class="statusText" id="pac5Status">OFF</text>
+
+</svg>
+
+</section>
+
+<!-- ==================================
+RUNNING HOURS
+================================== -->
+
+<section class="running-hours">
+
+<h2>DG Running Hours (Last 7 Days)</h2>
+<div class="graph-grid">
+
+    <div class="graph-card">
+        <h3>DG1</h3>
+        <h2 id="dg1Hours">0 hrs</h2>
+    </div>
+
+    <div class="graph-card">
+        <h3>DG2</h3>
+        <h2 id="dg2Hours">0 hrs</h2>
+    </div>
+
+</div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
