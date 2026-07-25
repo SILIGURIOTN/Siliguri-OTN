@@ -137,7 +137,7 @@ function checkOnline(lastUpdate){
 
     const status = document.getElementById("status");
 
-    if(diff <= 120){   // আগে ছিল 45
+    if(diff <= 300){  
 
         status.innerHTML = "🟢 ONLINE";
         status.style.background = "#00b050";
