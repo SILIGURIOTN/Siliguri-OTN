@@ -263,8 +263,6 @@ font-size:22px;
 #mimicSVG{
     width:100%;
     height:auto;
-    transform:scale(1.08);
-    transform-origin:center top;
 }
 
 /* Equipment Name */
@@ -640,11 +638,12 @@ height:180px;
         overflow-x:auto;
     }
 
-    #mimicSVG{
-        width:100%;
-        height:auto;
-        display:block;
-    }
+  #mimicSVG{
+    width:125%;
+    height:auto;
+    display:block;
+    margin-left:-12.5%;
+}
 
     .eqText{
         font-size:24px;
