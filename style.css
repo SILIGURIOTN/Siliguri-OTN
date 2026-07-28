@@ -46,116 +46,86 @@ body{
 HEADER
 =========================== */
 
+/* ===========================
+HEADER
+=========================== */
+
 .header{
-
     display:flex;
-
     justify-content:space-between;
-
-    align-items:flex-start;
-
-    padding:10px 5px 20px;
-
+    align-items:center;
+    padding:10px 15px 20px;
+    gap:15px;
 }
 
 /* LEFT */
 
 .header-left{
-
-    width:25%;
-
+    width:20%;
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
-.jio-logo{
-
-    width:110px;
-
-    display:block;
-
+.logo{
+    width:70px;
+    height:70px;
+    object-fit:contain;
 }
 
 .station-code{
-
-    margin-top:8px;
-
-    font-size:18px;
-
+    font-size:17px;
     font-weight:600;
-
     color:#0b57d0;
-
 }
 
 /* CENTER */
 
 .header-center{
-
-    width:50%;
-
+    width:60%;
     text-align:center;
-
 }
 
 .header-center h1{
-
     font-size:42px;
-
-    font-weight:700;
-
     color:#0046ad;
+    margin:0;
+}
 
-    letter-spacing:2px;
+#liveDate{
+    margin-top:8px;
+    font-size:18px;
+    font-weight:600;
+}
 
+#liveTime{
+    font-size:30px;
+    font-weight:bold;
+    color:#0a5d00;
+    margin-top:4px;
+}
+
+#status{
+    display:inline-block;
+    margin-top:8px;
+    background:#0b8d2b;
+    color:#fff;
+    padding:6px 18px;
+    border-radius:25px;
+    font-weight:bold;
 }
 
 /* RIGHT */
 
 .header-right{
-
-    width:25%;
-
-    text-align:right;
-
+    width:20%;
+    display:flex;
+    justify-content:flex-end;
 }
 
-#liveDate{
-
-    font-size:18px;
-
-    font-weight:600;
-
-    margin-bottom:8px;
-
-}
-
-#liveTime{
-
-    font-size:28px;
-
-    font-weight:bold;
-
-    color:#0a5d00;
-
-    margin-bottom:10px;
-
-}
-
-#status{
-
-    display:inline-block;
-
-    background:#0b8d2b;
-
-    color:white;
-
-    padding:8px 20px;
-
-    border-radius:25px;
-
-    font-size:18px;
-
-    font-weight:bold;
-
+.header-right .logo{
+    width:70px;
+    height:70px;
 }
 
 /* ===========================
@@ -212,43 +182,77 @@ RUNNING HOURS
 MOBILE
 =========================== */
 
-@media(max-width:900px){
+@media(max-width:768px){
 
 .header{
 
-flex-direction:column;
+    display:grid;
 
-align-items:center;
+    grid-template-columns:50px 1fr 50px;
+
+    align-items:center;
+
+    gap:8px;
 
 }
 
-.header-left,
-.header-center,
+.header-left{
+
+    width:auto;
+
+}
+
 .header-right{
 
-width:100%;
+    width:auto;
 
-text-align:center;
+    justify-content:flex-end;
 
-margin-bottom:15px;
+}
+
+.logo{
+
+    width:42px;
+
+    height:42px;
+
+}
+
+.station-code{
+
+    display:none;
+
+}
+
+.header-center{
+
+    width:auto;
 
 }
 
 .header-center h1{
 
-font-size:28px;
+    font-size:22px;
 
 }
 
-.jio-logo{
+#liveDate{
 
-margin:auto;
+    font-size:12px;
 
 }
 
 #liveTime{
 
-font-size:22px;
+    font-size:18px;
+
+}
+
+#status{
+
+    font-size:11px;
+
+    padding:4px 10px;
 
 }
 
