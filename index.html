@@ -37,7 +37,7 @@
 function login() {
     const pass = document.getElementById("password").value;
 
-    if (pass === "Nipalroy@123") {
+    if (pass === "0001") {
         document.getElementById("loginScreen").style.display = "none";
     } else {
         document.getElementById("error").innerHTML = "Wrong Password!";
@@ -46,10 +46,6 @@ function login() {
 </script>
 
 <div class="container">
-    ...
-</div>
-
-</body>
 
 <div class="dashboard">
 
@@ -59,51 +55,42 @@ HEADER
 
 <header class="header">
 
-<div class="header-left">
+    <!-- Left -->
+    <div class="header-left">
+        <img src="jio.png" class="logo">
 
-<img src="jio.png" class="jio-logo">
+        <div class="station-code">
+            I-WB-SLGR-AG2-0001
+        </div>
+    </div>
 
-<div class="station-code">
+    <!-- Center -->
+    <div class="header-center">
 
-I-WB-SLGR-AG2-0001
+        <h1>SILIGURI OTN</h1>
 
-</div>
+        <div class="date-time">
 
-</div>
+            <div id="liveDate"></div>
 
+            <div id="liveTime"></div>
 
-<div class="header-center">
+            <div id="status">
+                🟢 ONLINE
+            </div>
 
-<h1>SILIGURI OTN</h1>
+        </div>
 
-</div>
+    </div>
 
+    <!-- Right -->
+    <div class="header-right">
 
-<div class="header-right">
+        <img src="logo2.png" class="logo">
 
-<div id="liveDate">
-
-24-Jul-2026
-
-</div>
-
-<div id="liveTime">
-
-10:45:30 AM
-
-</div>
-
-<div id="status">
-
-🟢 ONLINE
-
-</div>
-
-</div>
+    </div>
 
 </header>
-
-<hr class="top-line">
 
 <!--==========================
 SLD START
@@ -207,3 +194,4 @@ RUNNING HOURS
 </body>
 
 </html>
+  
