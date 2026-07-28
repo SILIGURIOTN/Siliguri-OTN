@@ -18,14 +18,32 @@
 <body>
     <body>
 
+<div id="loginScreen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#0d1b2a;display:flex;justify-content:center;align-items:center;z-index:9999;">
+  <div style="background:#fff;padding:30px;border-radius:10px;text-align:center;width:320px;">
+    <h2>SILIGURI OTN</h2>
+    <p>Please Enter Password</p>
+
+    <input type="password" id="password" placeholder="Password"
+      style="width:100%;padding:10px;margin:10px 0;">
+
+    <button onclick="login()"
+      style="width:100%;padding:10px;background:#007bff;color:white;border:none;border-radius:5px;">
+      Login
+    </button>
+
+    <p id="error" style="color:red;margin-top:10px;"></p>
+  </div>
+</div>
+
 <script>
-const PASSWORD = "Nipalroy@123";
+function login() {
+    const pass = document.getElementById("password").value;
 
-const entered = prompt("Enter Password to Access Siliguri OTN Dashboard:");
-
-if (entered !== PASSWORD) {
-    alert("Incorrect Password!");
-    window.location.href = "https://www.google.com";
+    if (pass === "Nipalroy@123") {
+        document.getElementById("loginScreen").style.display = "none";
+    } else {
+        document.getElementById("error").innerHTML = "Wrong Password!";
+    }
 }
 </script>
 
