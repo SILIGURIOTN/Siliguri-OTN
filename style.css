@@ -74,10 +74,21 @@ HEADER
 }
 
 .station-code{
-    font-size:17px;
+
+    margin-top:6px;
+
+    margin-bottom:8px;
+
+    font-size:18px;
+
     font-weight:600;
+
     color:#0b57d0;
+
+    text-align:center;
+
 }
+
 
 /* CENTER */
 
@@ -184,15 +195,13 @@ MOBILE
 
 @media(max-width:768px){
 
-.header{
+.station-code{
 
-    display:grid;
+    display:block;
 
-    grid-template-columns:50px 1fr 50px;
+    font-size:12px;
 
-    align-items:center;
-
-    gap:8px;
+    margin-top:3px;
 
 }
 
