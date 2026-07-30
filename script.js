@@ -99,6 +99,58 @@ function setLED(ledId, statusId, value){
     }
 
 }
+/* ==========================================
+   SMPS / UPS STATUS
+========================================== */
+
+function updateBackupSystem(data){
+
+    // Power Available = EB অথবা DG1 অথবা DG2
+    const powerAvailable =
+        Number(data.field8) === 1 ||
+        Number(data.field6) === 1 ||
+        Number(data.field7) === 1;
+
+    const systems = [
+        {led:"ledSMPS1", txt:"smps1Status", line:"lineSMPS1"},
+        {led:"ledSMPS2", txt:"smps2Status", line:"lineSMPS2"},
+        {led:"ledUPS1",  txt:"ups1Status",  line:"lineUPS1"},
+        {led:"ledUPS2",  txt:"ups2Status",  line:"lineUPS2"}
+    ];
+
+    systems.forEach(item=>{
+
+        const led = document.getElementById(item.led);
+        const txt = document.getElementById(item.txt);
+
+        if(powerAvailable){
+
+            led.classList.remove("ledBattery","batteryBlink","ledOff");
+            led.classList.add("ledOn");
+
+            txt.innerHTML="ONLINE";
+            txt.classList.remove("statusBattery");
+            txt.classList.add("statusOnline");
+
+            powerLine(item.line,1);
+
+        }else{
+
+            led.classList.remove("ledOn","ledOff");
+            led.classList.add("ledBattery","batteryBlink");
+
+            txt.innerHTML="ON BATTERY";
+            txt.classList.remove("statusOnline");
+            txt.classList.add("statusBattery");
+
+            powerLine(item.line,0);
+
+        }
+
+    });
+
+
+}
 
 /* ==========================================
    UPDATE ALL EQUIPMENT
@@ -117,11 +169,14 @@ function updateEquipment(data){
     setLED("ledDG1","dg1Status",data.field6);
     setLED("ledDG2","dg2Status",data.field7);
 
-    // EB
-    setLED("ledEB","ebStatus",data.field8);
-    //
-    updatePowerFlow(data);
+// EB
+setLED("ledEB","ebStatus",data.field8);
 
+// Power Flow
+updatePowerFlow(data);
+
+// SMPS / UPS
+updateBackupSystem(data);
 }
 /* ==========================================
    STEP 4C
@@ -187,39 +242,54 @@ function powerLine(lineId, state){
 /* ==========================================
    UPDATE POWER FLOW
 ========================================== */
-
 function updatePowerFlow(data){
 
     // EB
     powerLine("lineEB", data.field8);
 
-    // DG1
+    // DG
     powerLine("lineDG1", data.field6);
-
-    // DG2
     powerLine("lineDG2", data.field7);
 
-    // PAC Lines (ID যোগ করার পরে কাজ করবে)
+    // PAC
     powerLine("linePAC1", data.field1);
     powerLine("linePAC2", data.field2);
     powerLine("linePAC3", data.field3);
     powerLine("linePAC4", data.field4);
     powerLine("linePAC5", data.field5);
 
+    // Power Source
+    const source =
+        Number(data.field8)==1 ||
+        Number(data.field6)==1 ||
+        Number(data.field7)==1;
+
+    // SMPS / UPS
+    powerLine("lineSMPS1", source);
+    powerLine("lineSMPS2", source);
+    powerLine("lineUPS1", source);
+    powerLine("lineUPS2", source);
+
 }
+/* ==========================================
+   CALCULATE DG RUNNING HOURS
+========================================== */
+
 function calculateRunningHours(feeds, field){
 
     let hours = 0;
 
-    for(let i=0;i<feeds.length-1;i++){
+    for(let i = 0; i < feeds.length - 1; i++){
 
-        if(Number(feeds[i][field])===1){
+        if(Number(feeds[i][field]) === 1){
 
-            let t1 = new Date(feeds[i].created_at);
-            let t2 = new Date(feeds[i+1].created_at);
+            const t1 = new Date(feeds[i].created_at);
+            const t2 = new Date(feeds[i + 1].created_at);
 
-            hours += (t2 - t1)/3600000;
+            hours += (t2 - t1) / 3600000;
+
         }
+
     }
 
     return hours.toFixed(1);
