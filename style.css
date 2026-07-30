@@ -742,6 +742,61 @@ height:180px;
 }
 
 #status{
+   /* ==========================
+   MOBILE LAYOUT
+========================== */
+
+@media (max-width:768px){
+
+.header{
+    flex-direction:column;
+    gap:12px;
+    padding:15px;
+}
+
+.header-left{
+    width:100%;
+    text-align:center;
+}
+
+.logo{
+    height:70px;
+}
+
+.header-center{
+    width:100%;
+    text-align:center;
+}
+
+.header-center h1{
+    font-size:28px;
+    margin:5px 0;
+}
+
+.station-code{
+    font-size:16px;
+}
+
+.header-status{
+    width:100%;
+    text-align:center;
+}
+
+#liveDate,
+#liveTime{
+    font-size:18px;
+}
+
+#status{
+    margin-top:8px;
+    font-size:18px;
+}
+
+#mimicSVG{
+    width:100%;
+    height:auto;
+}
+}
 
     display:inline-block;
 
