@@ -52,37 +52,26 @@ function login() {
 <!--==========================
 HEADER
 ===========================-->
-
 <header class="header">
 
     <!-- Left -->
     <div class="header-left">
         <img src="jio.png" class="logo">
-
     </div>
 
     <!-- Center -->
     <div class="header-center">
-
-    <h1>SILIGURI OTN</h1>
-
-    <div class="station-code">
-        I-WB-SLGR-AG2-0001
+        <h1>SILIGURI OTN</h1>
+        <div class="station-code">
+            I-WB-SLGR-AG2-0001
+        </div>
     </div>
 
-    <div id="liveDate"></div>
-
-    <div id="liveTime"></div>
-
-    <div id="status">🟢 ONLINE</div>
-
-</div>
-
     <!-- Right -->
-    <div class="header-right">
-
-        <img src="logo2.png" class="logo">
-
+    <div class="header-status">
+        <div id="liveDate"></div>
+        <div id="liveTime"></div>
+        <div id="status">🟢 ONLINE</div>
     </div>
 
 </header>
@@ -96,7 +85,7 @@ SLD START
      SLD MIMIC PANEL (SVG)
 =========================== -->
 
-<svg id="mimicSVG" width="100%" height="420" viewBox="0 0 1200 420">
+<svg id="mimicSVG" width="100%" height="650" viewBox="0 0 1200 650">
 
     <!-- EB -->
     <text x="600" y="40" text-anchor="middle" class="eqText">EB</text>
@@ -156,9 +145,134 @@ SLD START
     <text x="950" y="345" text-anchor="middle" class="eqText">PAC5</text>
     <text x="950" y="365" text-anchor="middle" class="statusText" id="pac5Status">OFF</text>
 
-</svg>
+    <!-- =======================
+SMPS & UPS SECTION
+======================= -->
 
-</section>
+<!-- ================= SMPS1 ================= -->
+<!-- =======================
+SMPS & UPS SECTION
+======================= -->
+
+<!-- ================= SMPS1 ================= -->
+
+<line id="lineSMPS1"
+      x1="338"
+      y1="220"
+      x2="338"
+      y2="450"
+      class="powerLine"/>
+
+<circle id="ledSMPS1"
+        cx="338"
+        cy="470"
+        r="10"
+        class="ledOff"/>
+
+<text x="338"
+      y="505"
+      text-anchor="middle"
+      class="eqText">
+SMPS1
+</text>
+
+<text id="smps1Status"
+      x="338"
+      y="530"
+      text-anchor="middle"
+      class="statusText">
+ONLINE
+</text>
+
+<!-- ================= SMPS2 ================= -->
+
+<line id="lineSMPS2"
+      x1="513"
+      y1="220"
+      x2="513"
+      y2="450"
+      class="powerLine"/>
+
+<circle id="ledSMPS2"
+        cx="513"
+        cy="470"
+        r="10"
+        class="ledOff"/>
+
+<text x="513"
+      y="505"
+      text-anchor="middle"
+      class="eqText">
+SMPS2
+</text>
+
+<text id="smps2Status"
+      x="513"
+      y="530"
+      text-anchor="middle"
+      class="statusText">
+ONLINE
+</text>
+
+<!-- ================= UPS1 ================= -->
+
+<line id="lineUPS1"
+      x1="688"
+      y1="220"
+      x2="688"
+      y2="450"
+      class="powerLine"/>
+
+<circle id="ledUPS1"
+        cx="688"
+        cy="470"
+        r="10"
+        class="ledOff"/>
+
+<text x="688"
+      y="505"
+      text-anchor="middle"
+      class="eqText">
+UPS1
+</text>
+
+<text id="ups1Status"
+      x="688"
+      y="530"
+      text-anchor="middle"
+      class="statusText">
+ONLINE
+</text>
+
+<!-- ================= UPS2 ================= -->
+
+<line id="lineUPS2"
+      x1="863"
+      y1="220"
+      x2="863"
+      y2="450"
+      class="powerLine"/>
+
+<circle id="ledUPS2"
+        cx="863"
+        cy="470"
+        r="10"
+        class="ledOff"/>
+
+<text x="863"
+      y="505"
+      text-anchor="middle"
+      class="eqText">
+UPS2
+</text>
+
+<text id="ups2Status"
+      x="863"
+      y="530"
+      text-anchor="middle"
+      class="statusText">
+ONLINE
+</text>
 
 <!-- ==================================
 RUNNING HOURS
