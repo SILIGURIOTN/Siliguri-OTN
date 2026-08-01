@@ -283,21 +283,31 @@ function updatePowerFlow(data){
 
 function calculateRunningHours(feeds, field){
 
-    let hours = 0;
+    let totalSeconds = 0;
 
-    for(let i = 0; i < feeds.length - 1; i++){
+    const now = new Date();
+    const sevenDaysAgo = new Date(now.getTime() - (7 * 24 * 60 * 60 * 1000));
 
-        if(Number(feeds[i][field]) === 1){
+    for(let i = 1; i < feeds.length; i++){
 
-            const t1 = new Date(feeds[i].created_at);
-            const t2 = new Date(feeds[i + 1].created_at);
+        const prev = feeds[i - 1];
+        const curr = feeds[i];
 
-            hours += (t2 - t1) / 3600000;
+        const prevTime = new Date(prev.created_at);
+        const currTime = new Date(curr.created_at);
 
+        // শুধু শেষ ৭ দিনের ডেটা
+        if(currTime < sevenDaysAgo){
+            continue;
+        }
+
+        // DG ON থাকলে সময় যোগ হবে
+        if(Number(prev[field]) === 1){
+            totalSeconds += (currTime - prevTime) / 1000;
         }
 
     }
 
-    return hours.toFixed(1);
+    return (totalSeconds / 3600).toFixed(2);
 
 }
