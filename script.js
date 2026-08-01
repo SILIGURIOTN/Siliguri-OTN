@@ -67,7 +67,7 @@ console.log(e);
 
 }
 
-setInterval(readThingSpeak,15000);
+setInterval(readThingSpeak,5000);
 
 readThingSpeak();
 /* ==========================================
