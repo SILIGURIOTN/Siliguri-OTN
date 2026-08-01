@@ -53,17 +53,23 @@ document.getElementById("dg1Hours").innerHTML = dg1Hours + " hrs";
 document.getElementById("dg2Hours").innerHTML = dg2Hours + " hrs";
 const latest = feeds[feeds.length - 1];
 
+failCount = 0;
+
 updateEquipment(latest);
 
 checkOnline(latest.created_at);
 
-}catch(e){
+  }catch(e){
 
-showOffline();
+        failCount++;
 
-console.log(e);
+        console.log(e);
 
-}
+        if(failCount >= 3){
+            showOffline();
+        }
+
+    }
 
 }
 
