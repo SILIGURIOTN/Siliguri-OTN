@@ -649,32 +649,34 @@ height:180px;
     width:100%;
     margin-top:10px;
 }
-
+   
 #liveDate,
 #liveTime{
     background:linear-gradient(135deg,#0057d9,#007bff);
     color:#fff;
+    width:160px;
+    height:48px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     border-radius:12px;
-    padding:10px 16px;
-    min-width:130px;
-    text-align:center;
     font-size:15px;
     font-weight:600;
     box-shadow:0 4px 12px rgba(0,87,217,.35);
-    border:none;
 }
 
 #status{
     background:linear-gradient(135deg,#00b050,#00d26a);
     color:#fff;
+    width:160px;
+    height:48px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     border-radius:12px;
-    padding:10px 16px;
-    min-width:130px;
-    text-align:center;
     font-size:15px;
     font-weight:700;
     box-shadow:0 4px 12px rgba(0,176,80,.35);
-    border:none;
 }
 
 .mimic-panel{
